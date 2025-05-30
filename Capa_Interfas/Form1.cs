@@ -1,3 +1,5 @@
+ï»¿
+
 using System;
 using System.Windows.Forms;
 using Capa_Negocios;
@@ -18,7 +20,7 @@ namespace Capa_Interfas
             LogicaProductos logica = new LogicaProductos();
             var productos = logica.ObtenerProductos();
 
-            // Creamos un listado que incluya también el costo de envío calculado
+            // Creamos un listado que incluya tambiÃ©n el costo de envÃ­o calculado
             var datos = productos.Select(p => new
             {
                 p.Id,
@@ -32,6 +34,10 @@ namespace Capa_Interfas
 
             dgvProductos.DataSource = datos;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
-
