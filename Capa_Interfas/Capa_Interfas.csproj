@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="C:\Users\Dubenny\Desktop\Form1.cs" Link="Form1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Capa_Negocios\Capa_Negocios.csproj" />
   </ItemGroup>
 

@@ -6,7 +6,7 @@ namespace ConexionADatos
 {
     public class Productos_Agri
     {
-        public string Connexion = "Server=.;DataBase=ProductosAgri; Integrate Seccuryty=true" + "TrustServerCertificate=True";
+        public string Conexion = "Server=.;DataBase=ProductosAgri;Integrated Security=true;TrustServerCertificate=True;";
 
     }
 }
