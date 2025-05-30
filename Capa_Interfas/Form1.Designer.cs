@@ -35,10 +35,10 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(263, 171);
+            dgvProductos.Location = new Point(137, 106);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(360, 225);
+            dgvProductos.Size = new Size(631, 306);
             dgvProductos.TabIndex = 0;
             dgvProductos.CellContentClick += dataGridView1_CellContentClick;
             // 
