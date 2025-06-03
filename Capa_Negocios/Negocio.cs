@@ -4,92 +4,77 @@ using System.Collections.Generic;
 
 namespace Capa_Negocios
 {
-    public abstract class Productos
+    public class Producto
     {
 
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Temporada { get; set; }
-        public string Tipo { get; set; }
+        public virtual string Tipo { get; set; }
         public int Precio { get; set; }
-        public int Stock { get; set; }
+        public int Cantidad {  get; set; }
+        public decimal Total => Precio * Cantidad;
 
-        public abstract decimal CalcularCostoEnvio();
+        public decimal CostoDeEnvio { get; set; }
         
+
  
     }
 
-    public class Fruta : Productos
+      
+      
+    public class Fruta : Producto
     {
-
-        public override decimal CalcularCostoEnvio()
-        {
-            return Precio * 0.15m;
-        } 
+        public override string Tipo => "Fruta";
+        
+      
     }
 
-    public class Grano : Productos
+    public class Grano : Producto
     {
+        public override string Tipo => "Grano";
 
-        public override decimal CalcularCostoEnvio()
-        {
-            return Precio * 0.20m;
-        }
     }
 
-    public class Verdura : Productos
+    public class Verdura : Producto
     {
 
-        public override decimal CalcularCostoEnvio()
-        {
-            return Precio * 0.10m;
-        }
+        public override string Tipo => "Verdura";
     }
 
 
-    public class LogicaProductos
+    public class Logicaproducto 
     {
-        // Este método conecta a la base de datos, lee los datos y los convierte en objetos
-        public List<Productos> ObtenerProductos()
+        public static int GuardarPedido(Producto producto)
         {
-            List<Productos> lista = new List<Productos>();
+            int retorno = 0;
             Productos_Agri conexion = new Productos_Agri();
-
             using (SqlConnection conn = new SqlConnection(conexion.Conexion))
             {
                 conn.Open();
+                string query = "INSERT INTO Producto (Nombre, Temporada, Tipo, Precio, Cantidad, Total, CostoDeEnvio) " +
+                               "VALUES (@nombre, @Temporada, @Tipo, @Precio, @Cantidad, @Total, @CostoDeEnvio)";
 
-                string query = "SELECT * FROM Producto";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    string tipo = reader["Tipo"].ToString();
-                    Productos producto;
+                cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                cmd.Parameters.AddWithValue("@Temporada", producto.Temporada);
+                cmd.Parameters.AddWithValue("@Tipo", producto.Tipo);
+                cmd.Parameters.AddWithValue("@Precio",  producto.Precio);
+                cmd.Parameters.AddWithValue("@Cantidad", producto.Cantidad);
+                cmd.Parameters.AddWithValue("@Total", producto.Total);
+                cmd.Parameters.AddWithValue("@CostoDeEnvio", producto.CostoDeEnvio);
+                
+                retorno = cmd.ExecuteNonQuery();
 
-                    // Dependiendo del tipo se crea la clase hija correcta
-                    switch (tipo)
-                    {
-                        case "Fruta": producto = new Fruta(); break;
-                        case "Grano": producto = new Grano(); break;
-                        case "Verdura": producto = new Verdura(); break;
-                        default: continue;
-                    }
-
-                    producto.Id = (int)reader["Id"];
-                    producto.Nombre = reader["Nombre"].ToString();
-                    producto.Temporada = reader["Temporada"].ToString();
-                    producto.Tipo = tipo;
-                    producto.Precio = (int)reader["Precio"];
-                    producto.Stock = (int)reader["Stock"];
-
-                    lista.Add(producto);
-                }
+                
             }
 
-            return lista;
+            return retorno;
         }
+
+        
+
     }
 
 }

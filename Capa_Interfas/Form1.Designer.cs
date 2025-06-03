@@ -28,34 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvProductos = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            components = new System.ComponentModel.Container();
+            dgvResumen = new DataGridView();
+            cmbTipo = new ComboBox();
+            cmbTemporada = new ComboBox();
+            cmbProduc = new ComboBox();
+            numericUpDown1 = new NumericUpDown();
+            btnAgregar = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
-            // dgvProductos
+            // dgvResumen
             // 
-            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(137, 106);
-            dgvProductos.Name = "dgvProductos";
-            dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(631, 306);
-            dgvProductos.TabIndex = 0;
-            dgvProductos.CellContentClick += dataGridView1_CellContentClick;
+            dgvResumen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvResumen.Location = new Point(25, 12);
+            dgvResumen.Name = "dgvResumen";
+            dgvResumen.RowHeadersWidth = 62;
+            dgvResumen.Size = new Size(840, 391);
+            dgvResumen.TabIndex = 0;
+            dgvResumen.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // cmbTipo
+            // 
+            cmbTipo.FormattingEnabled = true;
+            cmbTipo.Location = new Point(25, 494);
+            cmbTipo.Name = "cmbTipo";
+            cmbTipo.Size = new Size(252, 33);
+            cmbTipo.TabIndex = 1;
+            cmbTipo.Text = "Tipo";
+            // 
+            // cmbTemporada
+            // 
+            cmbTemporada.FormattingEnabled = true;
+            cmbTemporada.Location = new Point(320, 494);
+            cmbTemporada.Name = "cmbTemporada";
+            cmbTemporada.Size = new Size(252, 33);
+            cmbTemporada.TabIndex = 2;
+            cmbTemporada.Text = "Temporada";
+            // 
+            // cmbProduc
+            // 
+            cmbProduc.FormattingEnabled = true;
+            cmbProduc.Location = new Point(615, 494);
+            cmbProduc.Name = "cmbProduc";
+            cmbProduc.Size = new Size(250, 33);
+            cmbProduc.TabIndex = 3;
+            cmbProduc.Text = "Producto";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(320, 552);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(250, 31);
+            numericUpDown1.TabIndex = 4;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(383, 610);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(112, 34);
+            btnAgregar.TabIndex = 5;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dgvProductos);
+            ClientSize = new Size(911, 693);
+            Controls.Add(btnAgregar);
+            Controls.Add(numericUpDown1);
+            Controls.Add(cmbProduc);
+            Controls.Add(cmbTemporada);
+            Controls.Add(cmbTipo);
+            Controls.Add(dgvResumen);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvResumen).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgvProductos;
+        private DataGridView dgvResumen;
+        private ComboBox cmbTipo;
+        private ComboBox cmbTemporada;
+        private ComboBox cmbProduc;
+        private NumericUpDown numericUpDown1;
+        private Button btnAgregar;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }
