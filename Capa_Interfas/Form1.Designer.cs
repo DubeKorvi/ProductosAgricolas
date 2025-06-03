@@ -36,6 +36,7 @@
             numericUpDown1 = new NumericUpDown();
             btnAgregar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            txbPrecio = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(320, 552);
+            numericUpDown1.Location = new Point(25, 570);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(250, 31);
             numericUpDown1.TabIndex = 4;
@@ -100,11 +101,20 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // txbPrecio
+            // 
+            txbPrecio.Location = new Point(615, 569);
+            txbPrecio.Name = "txbPrecio";
+            txbPrecio.Size = new Size(250, 31);
+            txbPrecio.TabIndex = 6;
+            txbPrecio.Text = "Digite Precio";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(911, 693);
+            Controls.Add(txbPrecio);
             Controls.Add(btnAgregar);
             Controls.Add(numericUpDown1);
             Controls.Add(cmbProduc);
@@ -116,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvResumen).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -127,5 +138,6 @@
         private NumericUpDown numericUpDown1;
         private Button btnAgregar;
         private ContextMenuStrip contextMenuStrip1;
+        private TextBox txbPrecio;
     }
 }

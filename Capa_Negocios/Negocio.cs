@@ -11,13 +11,20 @@ namespace Capa_Negocios
         public string Nombre { get; set; }
         public string Temporada { get; set; }
         public virtual string Tipo { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
         public int Cantidad {  get; set; }
         public decimal Total => Precio * Cantidad;
 
-        public decimal CostoDeEnvio { get; set; }
+        public decimal CostoDeEnvio => CostoEn();
         
+        public decimal CostoEn()
+        {
+             decimal CostoE = Total * 0.15m;
 
+            return CostoE;
+        }
+
+       
  
     }
 

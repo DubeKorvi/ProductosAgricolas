@@ -85,6 +85,7 @@ namespace Capa_Interfas
             producto.Temporada = cmbTemporada.Text;
             producto.Nombre = cmbProduc.Text;
             producto.Cantidad = int.Parse(numericUpDown1.Text);
+            producto.Precio = decimal.Parse(txbPrecio.Text);
 
             int A = Logicaproducto.GuardarPedido(producto);
             if(A > 0)
