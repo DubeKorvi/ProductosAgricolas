@@ -37,59 +37,67 @@
             btnAgregar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             txbPrecio = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // dgvResumen
             // 
+            dgvResumen.AllowUserToAddRows = false;
+            dgvResumen.BackgroundColor = SystemColors.ButtonHighlight;
             dgvResumen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResumen.Location = new Point(25, 12);
+            dgvResumen.Location = new Point(76, 146);
             dgvResumen.Name = "dgvResumen";
             dgvResumen.RowHeadersWidth = 62;
-            dgvResumen.Size = new Size(840, 391);
+            dgvResumen.Size = new Size(1201, 317);
             dgvResumen.TabIndex = 0;
             dgvResumen.CellContentClick += dataGridView1_CellContentClick;
             // 
             // cmbTipo
             // 
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(25, 494);
+            cmbTipo.Location = new Point(74, 480);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(252, 33);
             cmbTipo.TabIndex = 1;
-            cmbTipo.Text = "Tipo";
+            cmbTipo.Text = "                   Tipo";
             // 
             // cmbTemporada
             // 
+            cmbTemporada.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             cmbTemporada.FormattingEnabled = true;
-            cmbTemporada.Location = new Point(320, 494);
+            cmbTemporada.Location = new Point(570, 480);
             cmbTemporada.Name = "cmbTemporada";
             cmbTemporada.Size = new Size(252, 33);
             cmbTemporada.TabIndex = 2;
-            cmbTemporada.Text = "Temporada";
+            cmbTemporada.Text = "               Temporada";
             // 
             // cmbProduc
             // 
+            cmbProduc.Font = new Font("Sitka Text Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbProduc.FormattingEnabled = true;
-            cmbProduc.Location = new Point(615, 494);
+            cmbProduc.Location = new Point(1011, 480);
             cmbProduc.Name = "cmbProduc";
-            cmbProduc.Size = new Size(250, 33);
+            cmbProduc.Size = new Size(264, 37);
             cmbProduc.TabIndex = 3;
-            cmbProduc.Text = "Producto";
+            cmbProduc.Text = "               Producto";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(25, 570);
+            numericUpDown1.Location = new Point(76, 628);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(250, 31);
             numericUpDown1.TabIndex = 4;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(383, 610);
+            btnAgregar.Location = new Point(630, 628);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(112, 34);
+            btnAgregar.Size = new Size(133, 47);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -103,17 +111,62 @@
             // 
             // txbPrecio
             // 
-            txbPrecio.Location = new Point(615, 569);
+            txbPrecio.Location = new Point(1011, 628);
             txbPrecio.Name = "txbPrecio";
-            txbPrecio.Size = new Size(250, 31);
+            txbPrecio.Size = new Size(264, 31);
             txbPrecio.TabIndex = 6;
-            txbPrecio.Text = "Digite Precio";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(1058, 572);
+            label1.Name = "label1";
+            label1.Size = new Size(217, 29);
+            label1.TabIndex = 7;
+            label1.Text = "Digite El Precio";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(65, 575);
+            label2.Name = "label2";
+            label2.Size = new Size(279, 26);
+            label2.TabIndex = 8;
+            label2.Text = "Selecione la cantidad";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Verdana", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(320, 53);
+            label3.Name = "label3";
+            label3.Size = new Size(760, 44);
+            label3.TabIndex = 9;
+            label3.Text = "----------Productos Agricolas----------";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Verdana", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Location = new Point(486, 109);
+            label4.Name = "label4";
+            label4.Size = new Size(415, 25);
+            label4.TabIndex = 10;
+            label4.Text = "Los mejores Productos del Condado";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(911, 693);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(1370, 693);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(txbPrecio);
             Controls.Add(btnAgregar);
             Controls.Add(numericUpDown1);
@@ -123,6 +176,7 @@
             Controls.Add(dgvResumen);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvResumen).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
@@ -139,5 +193,9 @@
         private Button btnAgregar;
         private ContextMenuStrip contextMenuStrip1;
         private TextBox txbPrecio;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

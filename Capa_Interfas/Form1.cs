@@ -67,7 +67,7 @@ namespace Capa_Interfas
 
                 dgvResumen.DataSource = dataTable;
 
-                
+
 
                 conn.Close();
 
@@ -80,7 +80,7 @@ namespace Capa_Interfas
         {
             Producto producto = new Producto();
 
-            
+
             producto.Tipo = cmbTipo.SelectedItem.ToString();
             producto.Temporada = cmbTemporada.Text;
             producto.Nombre = cmbProduc.Text;
@@ -88,7 +88,7 @@ namespace Capa_Interfas
             producto.Precio = decimal.Parse(txbPrecio.Text);
 
             int A = Logicaproducto.GuardarPedido(producto);
-            if(A > 0)
+            if (A > 0)
             {
                 MessageBox.Show("To' eto' Sirve");
             }
@@ -98,7 +98,17 @@ namespace Capa_Interfas
             }
             MostrarPedidos();
 
-           
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
