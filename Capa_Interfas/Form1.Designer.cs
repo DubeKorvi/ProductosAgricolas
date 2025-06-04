@@ -41,6 +41,9 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
+            Temporada = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -50,7 +53,7 @@
             dgvResumen.AllowUserToAddRows = false;
             dgvResumen.BackgroundColor = SystemColors.ButtonHighlight;
             dgvResumen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResumen.Location = new Point(76, 146);
+            dgvResumen.Location = new Point(89, 112);
             dgvResumen.Name = "dgvResumen";
             dgvResumen.RowHeadersWidth = 62;
             dgvResumen.Size = new Size(1201, 317);
@@ -59,45 +62,47 @@
             // 
             // cmbTipo
             // 
+            cmbTipo.Anchor = AnchorStyles.Left;
+            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(74, 480);
+            cmbTipo.Location = new Point(74, 526);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(252, 33);
             cmbTipo.TabIndex = 1;
-            cmbTipo.Text = "                   Tipo";
             // 
             // cmbTemporada
             // 
             cmbTemporada.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbTemporada.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTemporada.FormattingEnabled = true;
-            cmbTemporada.Location = new Point(570, 480);
+            cmbTemporada.Location = new Point(562, 526);
             cmbTemporada.Name = "cmbTemporada";
             cmbTemporada.Size = new Size(252, 33);
             cmbTemporada.TabIndex = 2;
-            cmbTemporada.Text = "               Temporada";
             // 
             // cmbProduc
             // 
+            cmbProduc.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProduc.Font = new Font("Sitka Text Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbProduc.FormattingEnabled = true;
-            cmbProduc.Location = new Point(1011, 480);
+            cmbProduc.Location = new Point(1011, 526);
             cmbProduc.Name = "cmbProduc";
             cmbProduc.Size = new Size(264, 37);
             cmbProduc.TabIndex = 3;
-            cmbProduc.Text = "               Producto";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(76, 628);
+            numericUpDown1.Location = new Point(74, 644);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(250, 31);
             numericUpDown1.TabIndex = 4;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(630, 628);
+            btnAgregar.Location = new Point(605, 631);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(133, 47);
+            btnAgregar.Size = new Size(154, 56);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -111,7 +116,7 @@
             // 
             // txbPrecio
             // 
-            txbPrecio.Location = new Point(1011, 628);
+            txbPrecio.Location = new Point(1011, 644);
             txbPrecio.Name = "txbPrecio";
             txbPrecio.Size = new Size(264, 31);
             txbPrecio.TabIndex = 6;
@@ -120,7 +125,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1058, 572);
+            label1.Location = new Point(1039, 592);
             label1.Name = "label1";
             label1.Size = new Size(217, 29);
             label1.TabIndex = 7;
@@ -131,7 +136,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(65, 575);
+            label2.Location = new Point(64, 595);
             label2.Name = "label2";
             label2.Size = new Size(279, 26);
             label2.TabIndex = 8;
@@ -141,7 +146,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(320, 53);
+            label3.Location = new Point(319, 24);
             label3.Name = "label3";
             label3.Size = new Size(760, 44);
             label3.TabIndex = 9;
@@ -151,11 +156,41 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Verdana", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(486, 109);
+            label4.Location = new Point(491, 84);
             label4.Name = "label4";
             label4.Size = new Size(415, 25);
             label4.TabIndex = 10;
             label4.Text = "Los mejores Productos del Condado";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.Location = new Point(147, 484);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 29);
+            label5.TabIndex = 11;
+            label5.Text = "Tipo";
+            // 
+            // Temporada
+            // 
+            Temporada.AutoSize = true;
+            Temporada.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Temporada.Location = new Point(605, 484);
+            Temporada.Name = "Temporada";
+            Temporada.Size = new Size(164, 29);
+            Temporada.TabIndex = 12;
+            Temporada.Text = "Temporada";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Location = new Point(1076, 484);
+            label7.Name = "label7";
+            label7.Size = new Size(134, 29);
+            label7.TabIndex = 13;
+            label7.Text = "Producto";
             // 
             // Form1
             // 
@@ -163,6 +198,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
             ClientSize = new Size(1370, 693);
+            Controls.Add(label7);
+            Controls.Add(Temporada);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -197,5 +235,8 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private Label Temporada;
+        private Label label7;
     }
 }
