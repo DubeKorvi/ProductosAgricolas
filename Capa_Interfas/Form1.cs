@@ -19,12 +19,11 @@ namespace Capa_Interfas
             this.Load += Form1_Load;
         }
 
+        //TODO Aqui empezamos a definir cada cmb, agregando los items, queria que esto se hiciera 
+        //desde la base de datos, que se llamara todo desde la misma pero estuvo cabron.
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*LogicaProductos logica = new LogicaProductos();
-            var productos = logica.ObtenerProductos();*/
-
-            // Creamos un listado que incluya también el costo de envío calculado
+            
             cmbTipo.Items.Add("Verdura");
             cmbTipo.Items.Add("Grano");
             cmbTipo.Items.Add("Fruta");
@@ -34,6 +33,7 @@ namespace Capa_Interfas
             cmbTemporada.Items.Add("Otono");
             cmbTemporada.Items.Add("Invierno");
             cmbTemporada.Items.Add("Primavera");
+            cmbTemporada.SelectedIndex = 0;
 
             cmbProduc.Items.Add("Zanahoria");
             cmbProduc.Items.Add("Espinaca");
@@ -41,7 +41,7 @@ namespace Capa_Interfas
             cmbProduc.Items.Add("Maiz");
             cmbProduc.Items.Add("Manzna");
             cmbProduc.Items.Add("Mango");
-
+            cmbProduc.SelectedIndex = 0;
 
 
         }
@@ -51,6 +51,7 @@ namespace Capa_Interfas
 
         }
 
+        //TODO aqui se mostrara los pedidos en el datagiview y se crea una nueva tabla
         private void MostrarPedidos()
         {
             Productos_Agri conexion = new Productos_Agri();
@@ -76,6 +77,7 @@ namespace Capa_Interfas
 
         }
 
+        //TODO Este es el boton de agregar lo seleciono a la base de datos 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Producto producto = new Producto();
@@ -85,7 +87,19 @@ namespace Capa_Interfas
             producto.Temporada = cmbTemporada.Text;
             producto.Nombre = cmbProduc.Text;
             producto.Cantidad = int.Parse(numericUpDown1.Text);
-            producto.Precio = decimal.Parse(txbPrecio.Text);
+            //producto.Precio = decimal.Parse(txbPrecio.Text);
+
+
+            int precio;
+
+            if (!int.TryParse(txbPrecio.Text, out precio))
+            {
+
+                MessageBox.Show("El Precioso Digitado no es uno valido, digite un precio Real.");
+                return;
+            }
+            producto.Precio = precio;
+
 
             int A = Logicaproducto.GuardarPedido(producto);
             if (A > 0)
@@ -97,7 +111,6 @@ namespace Capa_Interfas
                 MessageBox.Show("To' eto' no Sirve");
             }
             MostrarPedidos();
-
 
         }
 
@@ -111,4 +124,6 @@ namespace Capa_Interfas
 
         }
     }
+
+    
 }

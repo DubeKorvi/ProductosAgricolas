@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Capa_Negocios
 {
+    //Todo Classe Principal 
     public class Producto
     {
 
@@ -15,6 +16,7 @@ namespace Capa_Negocios
         public int Cantidad {  get; set; }
         public decimal Total => Precio * Cantidad;
 
+        //TODO Costo de envio y su metodo
         public decimal CostoDeEnvio => CostoEn();
         
         public decimal CostoEn()
@@ -29,7 +31,7 @@ namespace Capa_Negocios
     }
 
       
-      
+      //TODO herencia en cada de cada hija
     public class Fruta : Producto
     {
         public override string Tipo => "Fruta";
@@ -49,7 +51,7 @@ namespace Capa_Negocios
         public override string Tipo => "Verdura";
     }
 
-
+    //TODO Aqui esta el metodo para Guardar los pedidos, Estableciendo conexion con la Base de datos 
     public class Logicaproducto 
     {
         public static int GuardarPedido(Producto producto)
