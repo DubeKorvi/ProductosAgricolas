@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 
+//Entrega Final
 namespace Capa_Negocios
 {
     //Todo Classe Principal 
