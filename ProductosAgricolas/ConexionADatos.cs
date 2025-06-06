@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Data.SqlClient;
 
-
+//TODO aqui puse la conexion a la base de datos
 namespace ConexionADatos
 {
     public class Productos_Agri
