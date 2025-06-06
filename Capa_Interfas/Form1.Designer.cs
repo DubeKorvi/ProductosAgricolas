@@ -36,7 +36,6 @@
             numericUpDown1 = new NumericUpDown();
             btnAgregar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            txbPrecio = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -44,6 +43,7 @@
             label5 = new Label();
             Temporada = new Label();
             label7 = new Label();
+            txbPrecio = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -114,13 +114,6 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // txbPrecio
-            // 
-            txbPrecio.Location = new Point(1011, 644);
-            txbPrecio.Name = "txbPrecio";
-            txbPrecio.Size = new Size(264, 31);
-            txbPrecio.TabIndex = 6;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -145,7 +138,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Honeydew;
             label3.Font = new Font("Verdana", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(319, 24);
             label3.Name = "label3";
             label3.Size = new Size(760, 44);
@@ -192,12 +187,23 @@
             label7.TabIndex = 13;
             label7.Text = "Producto";
             // 
+            // txbPrecio
+            // 
+            txbPrecio.Location = new Point(1011, 644);
+            txbPrecio.Mask = "0000000000";
+            txbPrecio.Name = "txbPrecio";
+            txbPrecio.Size = new Size(264, 31);
+            txbPrecio.TabIndex = 14;
+            txbPrecio.ValidatingType = typeof(int);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1370, 693);
+            Controls.Add(txbPrecio);
             Controls.Add(label7);
             Controls.Add(Temporada);
             Controls.Add(label5);
@@ -205,7 +211,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(txbPrecio);
             Controls.Add(btnAgregar);
             Controls.Add(numericUpDown1);
             Controls.Add(cmbProduc);
@@ -230,7 +235,6 @@
         private NumericUpDown numericUpDown1;
         private Button btnAgregar;
         private ContextMenuStrip contextMenuStrip1;
-        private TextBox txbPrecio;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -238,5 +242,6 @@
         private Label label5;
         private Label Temporada;
         private Label label7;
+        private MaskedTextBox txbPrecio;
     }
 }
