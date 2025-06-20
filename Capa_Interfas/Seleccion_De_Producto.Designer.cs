@@ -1,6 +1,6 @@
 ﻿namespace Capa_Interfas
 {
-    partial class Form1
+    partial class Seleccion_De_Producto
     {
         /// <summary>
         /// Required designer variable.

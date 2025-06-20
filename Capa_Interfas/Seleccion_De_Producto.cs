@@ -11,9 +11,9 @@ using System.Data;
 //Entrega Final 3.0
 namespace Capa_Interfas
 {
-    public partial class Form1 : Form
+    public partial class Seleccion_De_Producto : Form
     {
-        public Form1()
+        public Seleccion_De_Producto()
         {
             InitializeComponent();
             MostrarPedidos();
