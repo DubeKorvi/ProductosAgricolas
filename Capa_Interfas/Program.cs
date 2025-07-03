@@ -11,7 +11,7 @@ namespace Capa_Interfas
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Seleccion_De_Producto());
+            Application.Run(new Pantalla_De_Inicio());
         }
     }
 }

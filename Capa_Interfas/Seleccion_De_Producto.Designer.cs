@@ -44,6 +44,8 @@
             Temporada = new Label();
             label7 = new Label();
             txbPrecio = new MaskedTextBox();
+            btnEditar = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvResumen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -196,13 +198,35 @@
             txbPrecio.TabIndex = 14;
             txbPrecio.ValidatingType = typeof(int);
             // 
-            // Form1
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(456, 596);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(112, 34);
+            btnEditar.TabIndex = 15;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(853, 592);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.TabIndex = 16;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // Seleccion_De_Producto
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1370, 693);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnEditar);
             Controls.Add(txbPrecio);
             Controls.Add(label7);
             Controls.Add(Temporada);
@@ -217,7 +241,7 @@
             Controls.Add(cmbTemporada);
             Controls.Add(cmbTipo);
             Controls.Add(dgvResumen);
-            Name = "Form1";
+            Name = "Seleccion_De_Producto";
             Text = "Form1";
             Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvResumen).EndInit();
@@ -243,5 +267,7 @@
         private Label Temporada;
         private Label label7;
         private MaskedTextBox txbPrecio;
+        private Button btnEditar;
+        private Button btnEliminar;
     }
 }

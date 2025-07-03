@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Datos", "ProductosAgri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Negocios", "Capa_Negocios\Capa_Negocios.csproj", "{4FAD83A1-C733-4129-832C-1E961FC4BF74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Interfas", "Capa_Interfas\Capa_Interfas.csproj", "{CB9C3123-E582-4D26-8402-7B9056A11248}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Presentacion", "Capa_Interfas\Capa_Presentacion.csproj", "{CB9C3123-E582-4D26-8402-7B9056A11248}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
